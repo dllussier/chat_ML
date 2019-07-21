@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.utils import shuffle
 
 import matplotlib.pyplot as plt
 
@@ -19,6 +20,8 @@ df = pd.read_csv(input_file, header = 0)
 #select data
 X = data[:, 2:]  #select columns 2 through end, predictors
 y = data[:, 1]   #select column 0, target
+
+#randomize the dataset
 
 #split the sample into training and test data
 X_train, X_test, y_train, y_test = train_test_split(
