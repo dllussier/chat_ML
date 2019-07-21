@@ -1,2 +1,2 @@
 # chat_ML
-This is for the machine learning portion of my project.
+This is callabaroatory effort for the machine learning portion of ncarlson's project.
