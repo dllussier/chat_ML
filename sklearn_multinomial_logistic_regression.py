@@ -17,7 +17,7 @@ input_file = "chatdata.csv"
 df = pd.read_csv(input_file, header = 0)
 
 #select data
-X = data[:, 1:]  #select columns 2 through end, predictors
+X = data[:, 2:]  #select columns 2 through end, predictors
 y = data[:, 1]   #select column 0, target
 
 #split the sample into training and test data
