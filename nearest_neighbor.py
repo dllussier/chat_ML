@@ -6,6 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.utils import shuffle
+from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 
 #designate input file
@@ -40,6 +41,5 @@ pred = knn.predict(X_test)
 #accuracy
 knn.score(X_test, y_test)
 
-print(knn.score)
-
-print("Accuracy score %.4f" % knn.score)
+#evaluate accuracy
+print accuracy_score(y_test, pred)
