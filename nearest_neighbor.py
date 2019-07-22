@@ -40,4 +40,4 @@ pred = knn.predict(X_test)
 #accuracy
 knn.score(X_test, y_test)
 
-print(accuracy_score(y_test, pred))
+print(knn.score)
