@@ -35,9 +35,9 @@ knn = KNeighborsClassifier(n_neighbors=5, weights=’uniform’, algorithm=’au
 knn.fit(X_train, y_train)
 
 #response prediction
-pred = knc.predict(X_test)
+pred = knn.predict(X_test)
 
 #accuracy
 knn.score(X_test, y_test)
 
-print(knn.score)
+print(accuracy_score(y_test, pred))
