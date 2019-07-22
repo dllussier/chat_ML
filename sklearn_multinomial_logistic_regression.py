@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 input_file = "chatdata.csv"
 
 #pandas read input csv
-df = pd.read_csv(input_file, header = 0,  sep=',')
+dataset = pd.read_csv(input_file, header = 0,  sep=',')
 
 #select data
 X = dataset.iloc[:, 2:]  #select columns 2 through end, predictors
