@@ -12,22 +12,30 @@ import matplotlib.pyplot as plt
 input_file = "chatdata.csv"
 
 #pandas read input csv
-df = pd.read_csv(input_file, header = 0)
+df = pd.read_csv(input_file, header = 0,  sep=',')
 
-X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
-nbrs = NearestNeighbors(n_neighbors=2, algorithm='ball_tree').fit(X)
-distances, indices = nbrs.kneighbors(X)
-indices                                           
-array([[0, 1],
-       [1, 0],
-       [2, 1],
-       [3, 4],
-       [4, 3],
-       [5, 4]]...)
-distances
-array([[0.        , 1.        ],
-       [0.        , 1.        ],
-       [0.        , 1.41421356],
-       [0.        , 1.        ],
-       [0.        , 1.        ],
-       [0.        , 1.41421356]])
+#select data
+X = dataset.iloc[:, 2:]  #select columns 2 through end, predictors
+y = dataset.iloc[:, 1]   #select column 1, target
+
+#shuffle the data and split the sample into training and test data
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, train_size=train_samples, test_size=100, shuffle=True)
+
+#standarize features
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+#kneighbors classifier object
+knc = KNeighborsClassifier(n_neighbors=5, weights=’uniform’, algorithm=’auto’, leaf_size=30, 
+                           p=2, metric=’minkowski’, metric_params=None, n_jobs=None)
+
+#fit model
+knc.fit(X_train, y_train)
+
+#response prediction
+pred = knc.predict(X_test)
+
+#accuracy
+print accuracy_score(y_test, pred)
