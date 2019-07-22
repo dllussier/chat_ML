@@ -28,14 +28,14 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 #kneighbors classifier object
-knc = KNeighborsClassifier(n_neighbors=5, weights=’uniform’, algorithm=’auto’, leaf_size=30, 
+knn = KNeighborsClassifier(n_neighbors=5, weights=’uniform’, algorithm=’auto’, leaf_size=30, 
                            p=2, metric=’minkowski’, metric_params=None, n_jobs=None)
 
 #fit model
-knc.fit(X_train, y_train)
+knn.fit(X_train, y_train)
 
 #response prediction
 pred = knc.predict(X_test)
 
 #accuracy
-print (accuracy_score(y_test, pred))
+knn.score(X_test, y_test)
