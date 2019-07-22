@@ -42,4 +42,4 @@ knn.score(X_test, y_test)
 
 print(knn.score)
 
-print("Accuracy score %.4f" % score)
+print("Accuracy score %.4f" % knn.score)
