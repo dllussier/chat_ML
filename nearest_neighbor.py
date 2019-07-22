@@ -38,4 +38,4 @@ knc.fit(X_train, y_train)
 pred = knc.predict(X_test)
 
 #accuracy
-print accuracy_score(y_test, pred)
+print (accuracy_score(y_test, pred))
