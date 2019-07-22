@@ -19,8 +19,8 @@ X = dataset.iloc[:, 2:]  #select columns 2 through end, predictors
 y = dataset.iloc[:, 1]   #select column 1, target
 
 #shuffle the data and split the sample into training and test data
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, train_size=train_samples, test_size=100, shuffle=True)
+X_train, X_test, y_train, y_test = train_test_split( X, y, train_size=433, 
+                                                    test_size=100, shuffle=True)
 
 #standarize features
 scaler = StandardScaler()
