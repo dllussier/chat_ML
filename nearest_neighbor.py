@@ -41,3 +41,5 @@ pred = knn.predict(X_test)
 knn.score(X_test, y_test)
 
 print(knn.score)
+
+print("Accuracy score %.4f" % score)
