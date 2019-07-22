@@ -39,3 +39,5 @@ pred = knc.predict(X_test)
 
 #accuracy
 knn.score(X_test, y_test)
+
+print(knn.score)
