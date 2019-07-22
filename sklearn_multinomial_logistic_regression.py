@@ -15,17 +15,15 @@ import matplotlib.pyplot as plt
 input_file = "chatdata.csv"
 
 #pandas read input csv
-df = pd.read_csv(input_file, header = 0)
+df = pd.read_csv(input_file, header = 0,  sep=',')
 
 #select data
-X = data[:, 2:]  #select columns 2 through end, predictors
-y = data[:, 1]   #select column 0, target
+X = dataset.iloc[:, 2:]  #select columns 2 through end, predictors
+y = dataset.iloc[:, 1]   #select column 1, target
 
-#randomize the dataset
-
-#split the sample into training and test data
+#shuffle the data and split the sample into training and test data
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, train_size=train_samples, test_size=100)
+    X, y, train_size=train_samples, test_size=100, shuffle=True)
 
 #standarize features
 scaler = StandardScaler()
